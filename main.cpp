@@ -13,4 +13,9 @@ int main() {
     chip.reset();
 
     std::cout << "Chip Program Counter after reset: " << chip.PC << "\n";
+
+    if(chip.load_rom("roms/chip8-logo.ch8") == 0)
+        std::cout << "OK!\n";
+
+    return 0;
 }

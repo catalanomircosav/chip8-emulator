@@ -1,7 +1,7 @@
 #pragma once
 #include <cstdint>
 #include <array>
-
+#include <string>
 
 namespace emu {
     const uint16_t START_ADDRESS = 0x200;
@@ -23,5 +23,6 @@ namespace emu {
 
         public:
             void reset();
+            int load_rom(std::string filename);
     };
 }
