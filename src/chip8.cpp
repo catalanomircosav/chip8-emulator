@@ -1,4 +1,5 @@
 #include "chip8.hpp"
+#include <cstdint>
 #include <fstream>
 #include <vector>
 #include <iostream>
@@ -53,5 +54,20 @@ namespace emu {
 
         std::cout << "File not found!\n";
         return 1;
+    }
+
+    std::optional<uint16_t> Chip8::fetch() {
+        if (PC + 1 >= (std::streamoff) memory.size()) {
+            std::cout << "Invalid register!\n";
+            return std::nullopt;
+        } else {
+            uint8_t high_byte = memory[PC];
+            uint8_t low_byte = memory[PC+1];
+
+            uint16_t instruction = (high_byte << 8) + low_byte;
+            PC += 2;
+
+            return instruction;
+        }
     }
 }
