@@ -1,0 +1,13 @@
+# Executables
+/main
+/a.out
+*.exe
+
+# Object and dependency files
+*.o
+*.obj
+*.d
+
+# Build directories
+/build/
+/cmake-build-*/
