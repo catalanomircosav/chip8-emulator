@@ -6,7 +6,30 @@ The project is currently in its early stages. The goal is to build the emulator 
 
 ## Current stage
 
-Basic machine state, reset, and ROM loading with size and read validation implemented. Instruction execution is not implemented yet.
+Basic machine state, fetch, reset and ROM loading with size and read validation implemented. Instruction execution is not implemented yet.
+
+## Build
+
+Requires a C++17 compiler: GCC or Clang on Unix; MinGW-w64 GCC or Clang on Windows.
+The compiler must be available in your `PATH`. The scripts use `g++` by default.
+Set `CXX` to `clang++` to use Clang, or to another compatible compiler executable.
+
+Unix:
+
+```sh
+./scripts/build.sh
+./build/chip8
+```
+
+Windows (Command Prompt):
+
+```bat
+scripts\build.bat
+build\chip8.exe
+```
+
+Build scripts can be invoked from any directory. Run the executable from the
+project root so it can find the ROM in `roms/`. Build output is ignored by Git.
 
 
 ## License
